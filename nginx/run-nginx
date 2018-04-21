@@ -1,10 +1,8 @@
 #!/bin/bash
-echo '[nginx-1.14.0] set by zxz:'
-exec "$@" && \
+/usr/local/nginx/sbin/nginx && \
 while true;do
   sleep 30
   if [ `ps -ef | grep nginx | wc -l` -le 1 ];then
     break
   fi
 done
-

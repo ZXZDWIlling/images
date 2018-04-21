@@ -2,10 +2,11 @@ FROM centos/s2i-core-centos7
 
 ARG NGINX_VERSION=1.14.0
 
-COPY entrypoint /entrypoint
+COPY entrypoint /
+COPY run-nginx /
 
 RUN set -x \
-  && chmod +x /entrypoint \
+  && chmod +x /entrypoint && chmod +x /run-nginx \
   && yum install -y gcc make pcre-devel zlib-devel openssl-devel \
   && yum clean all \
   && curl -o nginx-"$NGINX_VERSION".tar.gz http://nginx.org/download/nginx-"$NGINX_VERSION".tar.gz \
@@ -23,5 +24,5 @@ RUN chown -R nginx:nginx /usr/local/nginx \
 WORKDIR /usr/local/nginx
 EXPOSE 80
 ENTRYPOINT ["/entrypoint"]
-CMD ["/bin/bash"]
+CMD ["/run-nginx"]
 
