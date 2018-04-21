@@ -1,0 +1,3 @@
+#!/bin/bash
+echo '[nginx-1.14.0] set by zxz:'
+exec "$@"
