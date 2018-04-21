@@ -8,6 +8,8 @@ FROM mysql/mysql-server:5.7
 # MYSQL_GUEST=guest
 # MYSQL_GUEST_PASSWORD=123456
 
+USER 0
+
 COPY entrypoint /entrypoint
 COPY mysql-init.sh /mysql-init
 COPY run-mysqld.sh /usr/bin/run-mysqld
