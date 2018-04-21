@@ -16,7 +16,7 @@ COPY run-mysqld.sh /usr/bin/run-mysqld
 COPY my.cnf /tmp/my.cnf
 
 RUN set -x \
-  && chmod +x /entrypoint && chmod +x /mysql-init && chmod + x /usr/bin/run-mysqld
+  && chmod +x /entrypoint && chmod +x /mysql-init && chmod + x /usr/bin/run-mysqld \
   && yum clean all \
   && rm -f /etc/my.cnf && mv /tmp/my.cnf /etc/ \
   && rm -f /entrypoint.sh
