@@ -1,4 +1,5 @@
-FROM centos/s2i-core-centos7
+FROM scratch
+ADD centos-7-docker.tar.xz /
 
 ARG NGINX_VERSION=1.14.0
 
