@@ -1,5 +1,4 @@
-FROM scratch
-ADD centos-7-docker.tar.xz /
+FROM registry.cn-shenzhen.aliyuncs.com/zxzd/centos7
 
 ARG NGINX_VERSION=1.14.0
 
