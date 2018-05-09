@@ -1,4 +1,4 @@
-FROM oraclelinux:7-slim
+FROM registry.cn-shenzhen.aliyuncs.com/zxzd/centos7
 
 ARG PACKAGE_URL=https://repo.mysql.com/yum/mysql-5.7-community/docker/x86_64/mysql-community-server-minimal-5.7.22-1.el7.x86_64.rpm
 
