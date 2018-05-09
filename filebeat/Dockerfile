@@ -10,4 +10,4 @@ RUN set -x \
   && yum clean all
 
 ENTRYPOINT ["/entrypoint.sh"]
-CMD filebeat.sh -c /etc/filebeat/filebeat.yml
+CMD filebeat.sh -e -c /etc/filebeat/filebeat.yml
