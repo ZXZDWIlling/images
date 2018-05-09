@@ -1,0 +1,10 @@
+filebeat.prospectors:
+- input_type: log
+  paths:
+    - "/log/*"
+    - "/log/usermange/common/*"
+output.elasticsearch:
+  hosts: ["172.23.5.255:9200"]
+  username: "elastic"
+  password: "changeme"
+  index: "filebeat-docker-test"

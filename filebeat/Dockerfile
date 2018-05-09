@@ -1,6 +1,7 @@
 From oraclelinux:7-slim
 
-COPY entrypoint.sh /entrypoint.sh
+COPY entrypoint.sh /
+COPY filebeat.yml /etc/filebeat/conf.d/
 
 RUN set -x \
   && chmod 700 /entrypoint.sh \
@@ -10,4 +11,4 @@ RUN set -x \
   && yum clean all
 
 ENTRYPOINT ["/entrypoint.sh"]
-CMD filebeat.sh -e -c /etc/filebeat/filebeat.yml
+CMD filebeat.sh -e -c /etc/filebeat/conf.d/filebeat.yml
