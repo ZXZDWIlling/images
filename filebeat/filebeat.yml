@@ -1,8 +1,7 @@
 filebeat.prospectors:
 - input_type: log
   paths:
-    - "/log/*"
-    - "/log/usermange/common/*"
+    - "/log/*.log"
 output.elasticsearch:
   hosts: ["172.23.5.255:9200"]
   username: "elastic"
