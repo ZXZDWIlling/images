@@ -8,8 +8,7 @@ RUN set -x \
   && curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-5.6.9-x86_64.rpm \
   && rpm -ih filebeat-5.6.9-x86_64.rpm \
   && rm -f filebeat-5.6.9-x86_64.rpm \
-  && yum clean all \
-  && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+  && yum clean all 
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD filebeat.sh -e -c /etc/filebeat/conf.d/filebeat.yml
