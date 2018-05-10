@@ -1,4 +1,4 @@
-FROM oraclelinux:7-slim
+FROM registry.cn-shenzhen.aliyuncs.com/zxzd/centos7
 
 COPY entrypoint.sh /
 COPY filebeat.yml /etc/filebeat/conf.d/
