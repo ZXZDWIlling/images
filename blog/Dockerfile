@@ -1,8 +1,5 @@
 FROM tomcat:9-jre8-slim
 
-# tomcat-9.0.8
-# jre-1.8.0
-
 RUN set -x \
   && echo "* soft nofile 65535" >> /etc/security/limits.conf \
   && echo "* hard nofile 65535" >> /etc/security/limits.conf \
