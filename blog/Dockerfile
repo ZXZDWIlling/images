@@ -8,10 +8,7 @@ RUN set -x \
   && echo "* hard nofile 65535" >> /etc/security/limits.conf \
   && echo "@root        soft    nproc           65535" >> /etc/security/limits.conf \
   && echo "@root        hard    nproc           65535" >> /etc/security/limits.conf \
-  && ulimit -SH 65535 \
   && rm -rf /usr/local/tomcat/webapps/* \
-  && yum clean all \
-  && rm -rf /var/cache/yum \
   && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 ADD solo-2.8.0.tar.gz webapps/
